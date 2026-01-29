@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMM Strategy: @indonesiainnewyork</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
+    <!-- 
+    Palette Selection: "Diplomatic & Modern" 
+    Primary: #0F172A (Slate 900 - Authority)
+    Secondary: #B91C1C (Red 700 - National Identity)
+    Accent: #D97706 (Amber 600 - Warmth/Culture)
+    Background: #F8FAFC (Slate 50 - Clean Canvas)
+    -->
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F8FAFC;
+            color: #334155;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px; /* Mobile Optimized Height */
+            max-height: 400px;
+        }
+
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 400px; /* Desktop Height */
+            }
+        }
+
+        .card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        .gradient-header {
+            background: linear-gradient(135deg, #020617 0%, #1e3a8a 50%, #1e40af 100%);
+        }
+        
+        .section-title {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 2rem;
+            font-weight: 800;
+            color: #0F172A;
+            letter-spacing: -0.025em;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+            width: 40px;
+            height: 4px;
+            background-color: #B91C1C;
+        }
+
+        .icon-badge {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            font-weight: 800;
+            font-size: 1.25rem;
+            margin-bottom: 1.25rem;
+        }
+        @media (min-width: 768px) {
+            .icon-badge {
+                width: 64px;
+                height: 64px;
+                font-size: 1.5rem;
+                margin-bottom: 1.5rem;
+            }
+        }
+
+        .badge-red { background-color: #FEF2F2; color: #B91C1C; border: 1px solid #FECACA; }
+        .badge-blue { background-color: #EFF6FF; color: #1D4ED8; border: 1px solid #BFDBFE; }
+        .badge-gold { background-color: #FFFBEB; color: #B45309; border: 1px solid #FDE68A; }
+
+        /* Custom Scrollbar for cleaner look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8; 
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+
+    <!-- Header Section -->
+    <header class="gradient-header text-white py-12 md:py-20 px-4 mb-12 md:mb-16 shadow-2xl relative overflow-hidden">
+        <!-- Abstract Decoration -->
+        <div class="absolute top-0 right-0 w-64 h-64 bg-white opacity-5 rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/2"></div>
+        <div class="absolute bottom-0 left-0 w-96 h-96 bg-blue-400 opacity-5 rounded-full blur-3xl transform -translate-x-1/2 translate-y-1/2"></div>
+
+        <div class="max-w-5xl mx-auto text-center relative z-10">
+            <!-- Official Emblem (Garuda Pancasila) - Stable Wikimedia Source -->
+            <div class="inline-block p-1 bg-white rounded-full shadow-xl mb-6 md:mb-8">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/National_emblem_of_Indonesia_Garuda_Pancasila.svg/242px-National_emblem_of_Indonesia_Garuda_Pancasila.svg.png" 
+                     alt="National Emblem of Indonesia" 
+                     class="w-20 h-20 md:w-28 md:h-28 object-contain">
+            </div>
+            
+            <h1 class="text-3xl md:text-6xl font-extrabold mb-3 md:mb-4 tracking-tight leading-tight">
+                SMM STRATEGY 2026
+            </h1>
+            <h2 class="text-lg md:text-2xl font-medium text-blue-200 mb-6 md:mb-8 tracking-wide px-4">
+                Consulate General of The Republic of Indonesia in New York
+            </h2>
+            
+            <div class="inline-flex flex-col md:flex-row items-center bg-white/10 backdrop-blur-sm rounded-xl md:rounded-full px-6 py-3 border border-white/10 shadow-inner">
+                <span class="text-amber-400 font-bold tracking-wider uppercase text-xs md:text-sm mb-1 md:mb-0 md:mr-3">Core Mission</span>
+                <span class="text-white font-light border-t md:border-t-0 md:border-l border-white/20 pt-1 md:pt-0 md:pl-3 text-sm md:text-base">"Diplomatic yet Humanist"</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-4 md:px-6 pb-24 space-y-16 md:space-y-24">
+
+        <!-- SECTION 1: AUDIENCE ANALYSIS -->
+        <section>
+            <div class="max-w-3xl">
+                <h3 class="text-2xl md:text-3xl section-title">Target Audience Profile</h3>
+                <p class="mb-8 md:mb-10 text-slate-500 text-base md:text-lg leading-relaxed">
+                    A tiered communication strategy addressing the distinct needs of our three primary demographic segments in the East Coast jurisdiction.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+                <!-- Card 1: Diaspora -->
+                <div class="card bg-white rounded-2xl shadow-sm p-6 md:p-8 border border-slate-100 relative overflow-hidden group">
+                    <div class="absolute top-0 left-0 w-1 h-full bg-red-600"></div>
+                    <div class="icon-badge badge-red">ID</div>
+                    <h4 class="text-lg md:text-xl font-bold mb-1 text-slate-900">Citizens & Diaspora</h4>
+                    <p class="text-[10px] md:text-xs font-bold text-slate-400 mb-4 md:mb-6 uppercase tracking-wider">East Coast USA</p>
+                    <div class="space-y-3">
+                        <div class="flex flex-col">
+                            <span class="text-[10px] md:text-xs font-semibold text-slate-400 uppercase">Persona</span>
+                            <span class="text-xs md:text-sm text-slate-700">Students, Professionals, Families</span>
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="text-[10px] md:text-xs font-semibold text-slate-400 uppercase">Needs</span>
+                            <span class="text-xs md:text-sm text-slate-700">Passports, "Lapor Diri", Consular Services</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2: Locals -->
+                <div class="card bg-white rounded-2xl shadow-sm p-6 md:p-8 border border-slate-100 relative overflow-hidden group">
+                    <div class="absolute top-0 left-0 w-1 h-full bg-blue-600"></div>
+                    <div class="icon-badge badge-blue">NY</div>
+                    <h4 class="text-lg md:text-xl font-bold mb-1 text-slate-900">Local Residents</h4>
+                    <p class="text-[10px] md:text-xs font-bold text-slate-400 mb-4 md:mb-6 uppercase tracking-wider">New Yorkers</p>
+                    <div class="space-y-3">
+                        <div class="flex flex-col">
+                            <span class="text-[10px] md:text-xs font-semibold text-slate-400 uppercase">Persona</span>
+                            <span class="text-xs md:text-sm text-slate-700">Tourists, Culture Enthusiasts, Foodies</span>
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="text-[10px] md:text-xs font-semibold text-slate-400 uppercase">Needs</span>
+                            <span class="text-xs md:text-sm text-slate-700">Visas, Cultural Events, Culinary Info</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3: Stakeholders -->
+                <div class="card bg-white rounded-2xl shadow-sm p-6 md:p-8 border border-slate-100 relative overflow-hidden group">
+                    <div class="absolute top-0 left-0 w-1 h-full bg-amber-500"></div>
+                    <div class="icon-badge badge-gold">GV</div>
+                    <h4 class="text-lg md:text-xl font-bold mb-1 text-slate-900">Stakeholders</h4>
+                    <p class="text-[10px] md:text-xs font-bold text-slate-400 mb-4 md:mb-6 uppercase tracking-wider">Diplomatic Partners</p>
+                    <div class="space-y-3">
+                        <div class="flex flex-col">
+                            <span class="text-[10px] md:text-xs font-semibold text-slate-400 uppercase">Persona</span>
+                            <span class="text-xs md:text-sm text-slate-700">US Govt, Investors, Media</span>
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="text-[10px] md:text-xs font-semibold text-slate-400 uppercase">Needs</span>
+                            <span class="text-xs md:text-sm text-slate-700">Policy Updates, Bilateral News</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: CONTENT AUDIT (SWOT) -->
+        <section>
+            <div class="flex flex-col md:flex-row justify-between items-end mb-8 md:mb-10">
+                <div class="max-w-2xl">
+                    <h3 class="text-2xl md:text-3xl section-title">Current Content Audit</h3>
+                    <p class="text-slate-500 text-base md:text-lg">Key observations regarding current account performance, highlighting the "Flyer Fatigue" phenomenon.</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+                <!-- Strength -->
+                <div class="bg-white p-6 md:p-8 rounded-xl shadow-sm border border-slate-100 flex items-start">
+                    <div class="mr-4 mt-1 w-6 h-6 md:w-8 md:h-8 rounded-full bg-green-100 flex items-center justify-center text-green-600 font-bold text-xs md:text-sm shrink-0">S</div>
+                    <div>
+                        <h4 class="font-bold text-base md:text-lg mb-2 text-slate-900">Strengths</h4>
+                        <p class="text-slate-600 text-sm leading-relaxed">High institutional credibility (Verified badge). Consistent documentation of official activities and exclusive access to diplomatic events.</p>
+                    </div>
+                </div>
+                <!-- Weakness -->
+                <div class="bg-white p-6 md:p-8 rounded-xl shadow-sm border border-slate-100 flex items-start">
+                    <div class="mr-4 mt-1 w-6 h-6 md:w-8 md:h-8 rounded-full bg-red-100 flex items-center justify-center text-red-600 font-bold text-xs md:text-sm shrink-0">W</div>
+                    <div>
+                        <h4 class="font-bold text-base md:text-lg mb-2 text-slate-900">Weaknesses</h4>
+                        <p class="text-slate-600 text-sm leading-relaxed"><strong>Flyer Fatigue:</strong> Feed is saturated with text-heavy meeting posters. Visual inconsistency dilutes brand identity. Lack of two-way engagement.</p>
+                    </div>
+                </div>
+                <!-- Opportunity -->
+                <div class="bg-white p-6 md:p-8 rounded-xl shadow-sm border border-slate-100 flex items-start">
+                    <div class="mr-4 mt-1 w-6 h-6 md:w-8 md:h-8 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-bold text-xs md:text-sm shrink-0">O</div>
+                    <div>
+                        <h4 class="font-bold text-base md:text-lg mb-2 text-slate-900">Opportunities</h4>
+                        <p class="text-slate-600 text-sm leading-relaxed">Leverage the iconic NYC backdrop for visually striking content. Amplify inspiring stories of the Indonesian diaspora (Human Interest).</p>
+                    </div>
+                </div>
+                <!-- Solution -->
+                <div class="bg-gradient-to-br from-slate-900 to-slate-800 p-6 md:p-8 rounded-xl shadow-md text-white flex items-start">
+                    <div class="mr-4 mt-1 w-6 h-6 md:w-8 md:h-8 rounded-full bg-white/20 flex items-center justify-center text-white font-bold text-xs md:text-sm shrink-0">→</div>
+                    <div>
+                        <h4 class="font-bold text-base md:text-lg mb-2">The Solution</h4>
+                        <p class="text-slate-300 text-sm leading-relaxed">Transition from "Digital Notice Board" to <strong>"Visual Storytelling"</strong>. Move text details to captions and utilize Reels for maximum reach.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: STRATEGIC SHIFT VISUALIZATION -->
+        <section>
+            <div class="max-w-3xl">
+                <h3 class="text-2xl md:text-3xl section-title">Format Transformation</h3>
+                <p class="mb-8 md:mb-10 text-slate-500 text-base md:text-lg">
+                    Data-driven projection of the shift from low-impact legacy formats to high-engagement modern formats.
+                </p>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-4 md:p-10">
+                <!-- CHART CONTAINER 1: SCATTER PLOT -->
+                <div class="chart-container">
+                    <canvas id="contentShiftChart"></canvas>
+                </div>
+                <div class="mt-8 flex flex-col md:flex-row justify-center gap-4 md:gap-8 text-sm text-center md:text-left">
+                    <div class="flex items-center justify-center md:justify-start">
+                        <span class="w-3 h-3 bg-red-500 rounded-full mr-2"></span>
+                        <span class="text-slate-600 font-medium">Legacy Formats</span>
+                    </div>
+                    <div class="flex items-center justify-center md:justify-start">
+                        <span class="w-3 h-3 bg-blue-600 rounded-full mr-2"></span>
+                        <span class="text-slate-600 font-medium">Target Formats (2026)</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: CONTENT PILLARS -->
+        <section class="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 items-center">
+            <div class="order-2 lg:order-1">
+                <h3 class="text-2xl md:text-3xl section-title">Content Pillars 2026</h3>
+                <p class="mb-8 text-slate-600 leading-relaxed text-sm md:text-base">
+                    A balanced content mix designed to maintain account health, ensure public service delivery, and boost engagement simultaneously.
+                </p>
+                
+                <div class="space-y-6">
+                    <div class="flex items-start group">
+                        <div class="w-1 h-full min-h-[40px] bg-blue-900 mr-4 rounded-full"></div>
+                        <div>
+                            <h5 class="font-bold text-slate-900 text-base md:text-lg">Services & Protection (30%)</h5>
+                            <p class="text-xs md:text-sm text-slate-500 mt-1">Utility focus: Passports, Visas, Reporting. Practical solutions for citizens.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start group">
+                        <div class="w-1 h-full min-h-[40px] bg-blue-600 mr-4 rounded-full"></div>
+                        <div>
+                            <h5 class="font-bold text-slate-900 text-base md:text-lg">Economic Diplomacy (30%)</h5>
+                            <p class="text-xs md:text-sm text-slate-500 mt-1">Promoting Tourism, Culinary Heritage, and Indonesian SMEs in NYC.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start group">
+                        <div class="w-1 h-full min-h-[40px] bg-amber-500 mr-4 rounded-full"></div>
+                        <div>
+                            <h5 class="font-bold text-slate-900 text-base md:text-lg">Community & Diaspora (25%)</h5>
+                            <p class="text-xs md:text-sm text-slate-500 mt-1">Engagement focus: Success profiles, user-generated content, community events.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start group">
+                        <div class="w-1 h-full min-h-[40px] bg-slate-400 mr-4 rounded-full"></div>
+                        <div>
+                            <h5 class="font-bold text-slate-900 text-base md:text-lg">Official News (15%)</h5>
+                            <p class="text-xs md:text-sm text-slate-500 mt-1">Central government updates, safety advisories, and official statements.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 md:p-8 order-1 lg:order-2">
+                <!-- CHART CONTAINER 2: DOUGHNUT -->
+                <div class="chart-container">
+                    <canvas id="pillarsChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 5: TACTICAL ROADMAP -->
+        <section>
+            <h3 class="text-2xl md:text-3xl section-title">Tactical Roadmap: Month 1</h3>
+            <p class="mb-10 text-slate-500 text-base md:text-lg">Week 1 Execution Plan: Building Awareness & Educational Foundation.</p>
+
+            <div class="rounded-2xl border border-slate-200 overflow-hidden bg-white shadow-sm">
+                <!-- Header -->
+                <div class="grid grid-cols-1 md:grid-cols-7 bg-slate-50 border-b border-slate-200">
+                    <div class="p-4 text-xs font-bold uppercase tracking-wider text-slate-500 text-center hidden md:block">Mon</div>
+                    <div class="p-4 text-xs font-bold uppercase tracking-wider text-slate-500 text-center hidden md:block">Tue</div>
+                    <div class="p-4 text-xs font-bold uppercase tracking-wider text-slate-500 text-center hidden md:block">Wed</div>
+                    <div class="p-4 text-xs font-bold uppercase tracking-wider text-slate-500 text-center hidden md:block">Thu</div>
+                    <div class="p-4 text-xs font-bold uppercase tracking-wider text-slate-500 text-center hidden md:block">Fri</div>
+                    <div class="p-4 text-xs font-bold uppercase tracking-wider text-slate-500 text-center hidden md:block md:col-span-2">Weekend</div>
+                </div>
+
+                <!-- Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-7 divide-y md:divide-y-0 md:divide-x divide-slate-200">
+                    <!-- Monday -->
+                    <div class="p-4 md:p-6 hover:bg-slate-50 transition group">
+                        <span class="md:hidden text-xs font-bold text-slate-400 uppercase mb-2 block">Monday</span>
+                        <div class="inline-block px-2 py-1 text-[10px] font-bold tracking-wide uppercase text-white bg-blue-600 rounded mb-3">Reels</div>
+                        <h5 class="font-bold text-slate-900 text-sm mb-2 group-hover:text-blue-700">Office Tour</h5>
+                        <p class="text-xs text-slate-500 leading-relaxed">Showcasing the friendly service area at 68th Street.</p>
+                    </div>
+
+                    <!-- Tuesday -->
+                    <div class="p-4 md:p-6 hover:bg-slate-50 transition group">
+                        <span class="md:hidden text-xs font-bold text-slate-400 uppercase mb-2 block">Tuesday</span>
+                        <div class="inline-block px-2 py-1 text-[10px] font-bold tracking-wide uppercase text-slate-600 bg-slate-200 rounded mb-3">Story</div>
+                        <h5 class="font-bold text-slate-900 text-sm mb-2 group-hover:text-blue-700">Q&A Session</h5>
+                        <p class="text-xs text-slate-500 leading-relaxed">Interactive response to comments & weather updates.</p>
+                    </div>
+
+                    <!-- Wednesday -->
+                    <div class="p-4 md:p-6 hover:bg-slate-50 transition group">
+                        <span class="md:hidden text-xs font-bold text-slate-400 uppercase mb-2 block">Wednesday</span>
+                        <div class="inline-block px-2 py-1 text-[10px] font-bold tracking-wide uppercase text-white bg-blue-900 rounded mb-3">Carousel</div>
+                        <h5 class="font-bold text-slate-900 text-sm mb-2 group-hover:text-blue-700">Student Guide</h5>
+                        <p class="text-xs text-slate-500 leading-relaxed">"Lapor Diri" guide & tips for living in NY.</p>
+                    </div>
+
+                    <!-- Thursday -->
+                    <div class="p-4 md:p-6 hover:bg-slate-50 transition group">
+                        <span class="md:hidden text-xs font-bold text-slate-400 uppercase mb-2 block">Thursday</span>
+                        <div class="inline-block px-2 py-1 text-[10px] font-bold tracking-wide uppercase text-slate-600 bg-slate-200 rounded mb-3">Story</div>
+                        <h5 class="font-bold text-slate-900 text-sm mb-2 group-hover:text-blue-700">Throwback</h5>
+                        <p class="text-xs text-slate-500 leading-relaxed">Highlighting past community activities.</p>
+                    </div>
+
+                    <!-- Friday -->
+                    <div class="p-4 md:p-6 hover:bg-slate-50 transition group">
+                        <span class="md:hidden text-xs font-bold text-slate-400 uppercase mb-2 block">Friday</span>
+                        <div class="inline-block px-2 py-1 text-[10px] font-bold tracking-wide uppercase text-white bg-amber-500 rounded mb-3">Photo</div>
+                        <h5 class="font-bold text-slate-900 text-sm mb-2 group-hover:text-blue-700">Weekend Recs</h5>
+                        <p class="text-xs text-slate-500 leading-relaxed">Indonesian Restaurant spotlight in Queens.</p>
+                    </div>
+
+                    <!-- Weekend -->
+                    <div class="p-4 md:p-6 md:col-span-2 bg-slate-50/30 hover:bg-slate-50 transition group">
+                        <span class="md:hidden text-xs font-bold text-slate-400 uppercase mb-2 block">Weekend</span>
+                        <div class="inline-block px-2 py-1 text-[10px] font-bold tracking-wide uppercase text-white bg-red-600 rounded mb-3">Engage</div>
+                        <h5 class="font-bold text-slate-900 text-sm mb-2 group-hover:text-blue-700">Community Repost</h5>
+                        <p class="text-xs text-slate-500 leading-relaxed">Reposting citizen stories tagging @indonesiainnewyork to boost morale.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="mt-24 border-t border-slate-200 pt-12 pb-12 bg-white rounded-t-3xl shadow-[0_-10px_40px_-15px_rgba(0,0,0,0.05)]">
+            <div class="flex flex-col md:flex-row justify-between items-center max-w-6xl mx-auto px-6 gap-8">
+                <!-- Branding Agency -->
+                <div class="flex flex-col items-center md:items-start order-2 md:order-1">
+                    <p class="text-slate-500 text-sm font-semibold">© 2026 Social Media Strategy Proposal</p>
+                    <p class="text-slate-400 text-xs mt-1">Consulate General of the Republic of Indonesia in New York</p>
+                </div>
+                
+                <!-- EpicView Logo Section -->
+                <div class="flex flex-col items-center md:items-end order-1 md:order-2 bg-slate-50 px-6 py-4 rounded-xl border border-slate-100">
+                    <span class="text-slate-400 text-[10px] font-bold uppercase tracking-widest mb-2">Strategy & Creative By</span>
+                    <img src="https://epicview.org/img/epicview_logo.png" 
+                         alt="EpicView Agency" 
+                         class="h-8 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity filter grayscale hover:grayscale-0 duration-300">
+                </div>
+            </div>
+        </footer>
+
+    </main>
+
+    <script>
+        // --- UTILITY: Label Wrapping Logic (16 chars) ---
+        function formatLabels(labels) {
+            return labels.map(label => {
+                if (label.length <= 16) return label;
+                const words = label.split(' ');
+                const lines = [];
+                let currentLine = words[0];
+
+                for (let i = 1; i < words.length; i++) {
+                    if ((currentLine + ' ' + words[i]).length <= 16) {
+                        currentLine += ' ' + words[i];
+                    } else {
+                        lines.push(currentLine);
+                        currentLine = words[i];
+                    }
+                }
+                lines.push(currentLine);
+                return lines;
+            });
+        }
+
+        // --- UTILITY: Tooltip Configuration ---
+        const commonTooltipOptions = {
+            backgroundColor: '#1E293B',
+            titleFont: { family: 'Inter', size: 13 },
+            bodyFont: { family: 'Inter', size: 12 },
+            padding: 12,
+            cornerRadius: 8,
+            callbacks: {
+                title: function(tooltipItems) {
+                    const item = tooltipItems[0];
+                    let label = item.chart.data.labels[item.dataIndex];
+                    if (Array.isArray(label)) {
+                        return label.join(' ');
+                    } else {
+                        return label;
+                    }
+                }
+            }
+        };
+
+        // --- CHART 1: Content Shift (Scatter Plot) ---
+        const ctxShift = document.getElementById('contentShiftChart').getContext('2d');
+        
+        const shiftData = {
+            datasets: [
+                {
+                    label: 'Current Formats',
+                    data: [
+                        { x: 2, y: 3, type: 'Meeting Flyers' },
+                        { x: 3, y: 4, type: 'Formal Photos' },
+                        { x: 1, y: 2, type: 'Text Screenshots' }
+                    ],
+                    backgroundColor: '#EF4444',
+                    pointRadius: 8,
+                    pointHoverRadius: 10,
+                    pointHoverBackgroundColor: '#B91C1C'
+                },
+                {
+                    label: 'Target Formats (2026)',
+                    data: [
+                        { x: 8, y: 9, type: 'Cinematic Reels' },
+                        { x: 6, y: 8, type: 'Edu Carousels' },
+                        { x: 5, y: 7, type: 'UGC' },
+                        { x: 4, y: 6, type: 'Interactive Stories' }
+                    ],
+                    backgroundColor: '#2563EB',
+                    pointRadius: 12,
+                    pointHoverRadius: 14,
+                    pointHoverBackgroundColor: '#1D4ED8'
+                }
+            ]
+        };
+
+        new Chart(ctxShift, {
+            type: 'scatter',
+            data: shiftData,
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                layout: {
+                    padding: { left: 10, right: 10, top: 10, bottom: 10 }
+                },
+                scales: {
+                    x: {
+                        title: { display: true, text: 'Effort & Production Quality', font: { family: 'Inter', weight: '600' }, color: '#64748B' },
+                        min: 0, max: 10,
+                        grid: { display: false, borderColor: '#CBD5E1' },
+                        ticks: { font: { family: 'Inter' }, color: '#94A3B8' }
+                    },
+                    y: {
+                        title: { display: true, text: 'Audience Engagement', font: { family: 'Inter', weight: '600' }, color: '#64748B' },
+                        min: 0, max: 10,
+                        grid: { color: '#F1F5F9', borderColor: '#CBD5E1' },
+                        ticks: { font: { family: 'Inter' }, color: '#94A3B8' }
+                    }
+                },
+                plugins: {
+                    tooltip: {
+                        ...commonTooltipOptions,
+                        callbacks: {
+                            label: function(context) {
+                                let point = context.raw;
+                                return `${point.type}: Engagement ${point.y}/10`;
+                            }
+                        }
+                    },
+                    legend: { display: false } // Custom legend used in HTML
+                }
+            }
+        });
+
+        // --- CHART 2: Content Pillars (Doughnut) ---
+        const ctxPillars = document.getElementById('pillarsChart').getContext('2d');
+        
+        const rawPillarLabels = [
+            "Services & Protection", 
+            "Economic Diplomacy", 
+            "Community & Diaspora", 
+            "Official News"
+        ];
+        
+        const pillarData = [30, 30, 25, 15];
+        const pillarColors = ['#1E3A8A', '#2563EB', '#F59E0B', '#94A3B8'];
+
+        new Chart(ctxPillars, {
+            type: 'doughnut',
+            data: {
+                labels: formatLabels(rawPillarLabels),
+                datasets: [{
+                    data: pillarData,
+                    backgroundColor: pillarColors,
+                    borderWidth: 2,
+                    borderColor: '#ffffff',
+                    hoverOffset: 15
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                cutout: '65%',
+                layout: {
+                    padding: 20
+                },
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            usePointStyle: true,
+                            pointStyle: 'circle',
+                            padding: 25,
+                            font: { family: 'Inter', size: 11, weight: '500' },
+                            color: '#475569'
+                        }
+                    },
+                    tooltip: commonTooltipOptions
+                }
+            }
+        });
+
+    </script>
+</body>
+</html>
